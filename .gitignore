@@ -1,5 +1,8 @@
 ~
-*.~
-'#*
+*~
+gitit
+test
+*test
 test*
-*test*
+'#*
+#*
