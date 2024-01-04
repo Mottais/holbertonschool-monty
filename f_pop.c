@@ -8,7 +8,17 @@
 
 void f_pop(stack_t **list_head, unsigned int num_ligne)
 {
-	(void)list_head;
-	(void)num_ligne;
-	printf("f_pop à traiter\n");
+	stack_t *node_to_pop = *list_head;
+
+	if (*list_head == NULL)
+	{
+	fprintf(stderr, "L%d: can't pop an empty stack\n", num_ligne);
+	erreur = EXIT_FAILURE;
+	return;
+	}
+
+	*list_head = (*list_head)->next;
+	free(node_to_pop);
+	if (*list_head != NULL)
+	(*list_head)->prev = NULL;
 }

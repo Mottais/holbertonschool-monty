@@ -8,7 +8,12 @@
 
 void f_pall(stack_t **list_head, unsigned int num_ligne)
 {
-	(void)list_head;
+	stack_t *current = *list_head;
 	(void)num_ligne;
-	printf("f_pall à traiter\n");
+
+	while (current != NULL)
+	{
+		printf("%d\n", current->n);
+		current = current->next;
+	}
 }

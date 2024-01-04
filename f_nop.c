@@ -10,5 +10,4 @@ void f_nop(stack_t **list_head, unsigned int num_ligne)
 {
 	(void)list_head;
 	(void)num_ligne;
-	printf("f_nop à traiter\n");
 }

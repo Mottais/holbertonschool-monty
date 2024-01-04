@@ -8,7 +8,13 @@
 
 void f_pint(stack_t **list_head, unsigned int num_ligne)
 {
-	(void)list_head;
 	(void)num_ligne;
-	printf("f_nop à traiter\n");
+
+	if (*list_head == NULL)
+	{
+	fprintf(stderr, "L%u: can't pint, stack empty\n", num_ligne);
+	erreur = EXIT_FAILURE;
+	return;
+	}
+	printf("%d\n", (*list_head)->n);
 }
