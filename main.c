@@ -23,7 +23,7 @@ int main(int arg_c, char **arg_v)
 	fprintf(stderr, "USAGE: monty file\n"), exit(EXIT_FAILURE);
 	ptr_fichier = fopen(arg_v[1], "r");
 	if (ptr_fichier == NULL)
-	fprintf(stderr, "error: Can't open file %s\n", arg_v[1]), exit(EXIT_FAILURE);
+	fprintf(stderr, "Error: Can't open file %s\n", arg_v[1]), exit(EXIT_FAILURE);
 	erreur = 0;
 while (getline(&ligne, &len, ptr_fichier) != -1)
 {
