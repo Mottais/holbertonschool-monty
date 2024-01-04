@@ -11,6 +11,12 @@ void f_pall(stack_t **list_head, unsigned int num_ligne)
 	stack_t *current = *list_head;
 	(void)num_ligne;
 
+	if (list_head == NULL)
+	{
+		erreur = EXIT_FAILURE;
+		return;
+	}
+
 	while (current != NULL)
 	{
 		printf("%d\n", current->n);
