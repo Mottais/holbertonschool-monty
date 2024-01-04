@@ -1,5 +1,13 @@
 #ifndef _EXISTE_DEJA_
 #define _EXISTE_DEJA_
+
+#include <stdio.h>/*for printf*/
+#include <stdlib.h>/*for free*/ 
+#include <unistd.h>/*for ssize_t*/
+#include <string.h>/*for strtok*/
+
+int erreur;
+
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
@@ -30,5 +38,14 @@ typedef struct instruction_s
         char *opcode;
         void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
+
+void f_push(stack_t **list_head, unsigned int num_ligne);
+void f_pall(stack_t **list_head, unsigned int num_ligne);
+void f_pint(stack_t **list_head, unsigned int num_ligne);
+void f_pop(stack_t **list_head, unsigned int num_ligne);
+void f_swap(stack_t **list_head, unsigned int num_ligne);
+void f_add(stack_t **list_head, unsigned int num_ligne);
+void f_nop(stack_t **list_head, unsigned int num_ligne);
+void free_stack(stack_t **list_head);
 
 #endif
