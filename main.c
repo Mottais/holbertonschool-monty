@@ -4,6 +4,13 @@
 #include <string.h>/*for strtok*/
 #include "monty.h"
 
+/**
+ * main - gérer une structure
+ * @arg_c: 1er argument
+ * @arg_v: valeur de l'argument
+ * Return: Always 0
+ */
+
 int main(int arg_c, char **arg_v)
 {
 	int compte_ligne = 0, index_fonct, i;
