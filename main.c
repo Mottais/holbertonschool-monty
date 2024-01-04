@@ -28,7 +28,7 @@ int main(int arg_c, char **arg_v)
 while (getline(&ligne, &len, ptr_fichier) != -1)
 {
 	compte_ligne++; /*compteur nb de lignes dans fichier (arg_v[1])*/
-	instruction = strtok(ligne, " \t\n");
+	instruction = strtok(ligne, " \n");
 	if (instruction != NULL) /* si vide à Traiter*/
 	{
 		index_fonct = -1;

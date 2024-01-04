@@ -8,7 +8,7 @@
 
 void f_push(stack_t **list_head, unsigned int num_ligne)
 {
-	char *value_str = strtok(NULL, " \t\n");
+	char *value_str = strtok(NULL, " \n");
 	unsigned int i;
 	stack_t *new_element;
 
