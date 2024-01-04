@@ -1,7 +1,3 @@
-#include <stdio.h>/*for printf*/
-#include <stdlib.h>/*for free*/
-#include <unistd.h>/*for ssize_t*/
-#include <string.h>/*for strtok*/
 #include "monty.h"
 
 /**
@@ -22,41 +18,34 @@ int main(int arg_c, char **arg_v)
 		{"push", f_push}, {"pall", f_pall}, {"pint", f_pint},
 		{"pop", f_pop}, {"swap", f_swap}, {"add", f_add},
 		{"nop", f_nop}, {NULL, NULL}};
+
 	if (arg_c != 2)
-	{
-		fprintf(stderr, "USAGE: monty file\n");
-		exit(EXIT_FAILURE);
-	}
+	fprintf(stderr, "USAGE: monty file\n"), exit(EXIT_FAILURE);
 	ptr_fichier = fopen(arg_v[1], "r");
 	if (ptr_fichier == NULL)
-	{
-		fprintf(stderr, "error: Can't open file %s\n", arg_v[1]);
-		exit(EXIT_FAILURE);
-	}
+	fprintf(stderr, "error: Can't open file %s\n", arg_v[1]), exit(EXIT_FAILURE);
 	erreur = 0;
-	while (getline(&ligne, &len, ptr_fichier) != -1)
+while (getline(&ligne, &len, ptr_fichier) != -1)
+{
+	compte_ligne++; /*compteur nb de lignes dans fichier (arg_v[1])*/
+	instruction = strtok(ligne, " \t\n");
+	if (instruction != NULL) /* si vide à Traiter*/
 	{
-		compte_ligne++; /*compteur nb lignes dans fichier (arg_v[1])*/
-		instruction = strtok(ligne, " \t\n");
-/*                if (instruction == NULL)  si vide à Traiter*/
 		index_fonct = -1;
 		for (i = 0; tab_opcode_fonct[i].opcode != NULL; i++)
 		{
 			if (strcmp(instruction, tab_opcode_fonct[i].opcode) == 0)
-			{
-				index_fonct = i;
-				tab_opcode_fonct[index_fonct].f(&list_head, compte_ligne);
-			}
+				index_fonct = i, tab_opcode_fonct[index_fonct].f(&list_head, compte_ligne);
 		}
 		if (index_fonct == -1)
 		{
-			fprintf(stderr, "L%d: unknown instruction %s\n",
-				compte_ligne, instruction);
-			return (-1);
+			fprintf(stderr, "L%d: unknown instruction %s\n", compte_ligne, instruction);
+			erreur = EXIT_FAILURE;
 		}
+		if (erreur == EXIT_FAILURE)
+		break;
 	}
-	free_stack(&list_head), free(ligne), fclose(ptr_fichier);
-	if (erreur == 1 || index_fonct == -1)
-		exit(EXIT_FAILURE);
-	return (0);
+}
+free_stack(&list_head), free(ligne), fclose(ptr_fichier);
+return (erreur);
 }
