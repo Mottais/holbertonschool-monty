@@ -37,15 +37,15 @@ int main(int arg_c, char **arg_v)
 				if (strcmp(instruction, tab_opcode_fonct[i].opcode) == 0)
 				index_fonct = i, tab_opcode_fonct[index_fonct].f(&list_head, compte_lg);
 			}
-		if (index_fonct == -1 && instruction[0] != '#')
-		{
-			fprintf(stderr, "L%d: unknown instruction %s\n", compte_lg, instruction);
-			erreur = EXIT_FAILURE;
+			if (index_fonct == -1 && instruction[0] != '#')
+			{
+				fprintf(stderr, "L%d: unknown instruction %s\n", compte_lg, instruction);
+				erreur = EXIT_FAILURE;
+			}
+			if (erreur == EXIT_FAILURE)
+				break;
 		}
-		if (erreur == EXIT_FAILURE)
-			break;
 	}
-}
-free_stack(&list_head), free(ligne), fclose(ptr_fichier);
-return (erreur);
+	free_stack(&list_head), free(ligne), fclose(ptr_fichier);
+	return (erreur);
 }
