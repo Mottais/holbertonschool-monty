@@ -16,8 +16,8 @@ int main(int arg_c, char **arg_v)
 	stack_t *list_head = NULL;
 	instruction_t tab_opcode_fonct[] = {
 		{"push", f_push}, {"pall", f_pall}, {"pint", f_pint}, {"pop", f_pop},
-		{"swap", f_swap}, {"add", f_add}, {"sub", f_sub}, {"nop", f_nop},
-		{NULL, NULL}};
+		{"swap", f_swap}, {"add", f_add}, {"sub", f_sub}, {"div", f_div},
+		{"nop", f_nop},	{NULL, NULL}};
 
 	if (arg_c != 2)
 	fprintf(stderr, "USAGE: monty file\n"), exit(EXIT_FAILURE);

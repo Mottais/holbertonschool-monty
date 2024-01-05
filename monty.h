@@ -47,6 +47,7 @@ void f_pop(stack_t **list_head, unsigned int num_ligne);
 void f_swap(stack_t **list_head, unsigned int num_ligne);
 void f_add(stack_t **list_head, unsigned int num_ligne);
 void f_sub(stack_t **list_head, unsigned int num_ligne);
+void f_div(stack_t **list_head, unsigned int num_ligne);
 void f_nop(stack_t **list_head, unsigned int num_ligne);
 void free_stack(stack_t **list_head);
 
