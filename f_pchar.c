@@ -2,8 +2,8 @@
 
 /**
  * f_pchar - imprime la valeur format caractere du 1er élémnent de la pile
- * @stack: pointer to the stack
- * @line_number: line number of the instruction
+ * @list_head: pointer to the stack
+ * @num_ligne: line number of the instruction
  *
  * Description: print the value at the top of the stack as a char
  * Return: NOTHING
