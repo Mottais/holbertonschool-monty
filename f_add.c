@@ -24,5 +24,4 @@ void f_add(stack_t **list_head, unsigned int num_ligne)
 	/* supp le 1er élément de la pile */
 	free((*list_head)->prev);
 
-	(*list_head)->prev = NULL;	
 }
