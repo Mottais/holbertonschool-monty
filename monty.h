@@ -53,6 +53,8 @@ void f_mod(stack_t **list_head, unsigned int num_ligne);
 void f_nop(stack_t **list_head, unsigned int num_ligne);
 void f_pchar(stack_t **list_head, unsigned int num_ligne);
 void f_pstr(stack_t **list_head, unsigned int num_ligne);
+void f_rotl(stack_t **list_head, unsigned int num_ligne);
+
 void free_stack(stack_t **list_head);
 
 
