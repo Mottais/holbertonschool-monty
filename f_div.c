@@ -24,7 +24,7 @@ void f_div(stack_t **list_head, unsigned int num_ligne)
 	}
 
 	/* ajoute la valeur du 1er élément au 2ieme */
-	(*list_head)->next->n += (*list_head)->n;
+	(*list_head)->next->n /= (*list_head)->n;
 
 	/* le 2ieme element devient la tête de pile */
 	(*list_head) = (*list_head)->next;
