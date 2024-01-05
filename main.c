@@ -17,11 +17,11 @@ int main(int arg_c, char **arg_v)
 	instruction_t tab_opcode_fonct[] = {
 		{"push", f_push}, {"pall", f_pall}, {"pint", f_pint}, {"pop", f_pop},
 		{"swap", f_swap}, {"add", f_add}, {"sub", f_sub}, {"div", f_div},
-		{"mul", f_mul}, {"mod", f_mod}, {"nop", f_nop},	{NULL, NULL}};
+		{"mul", f_mul}, {"mod", f_mod}, {"nop", f_nop},	{"pchar", f_pchar},
+		{NULL, NULL}};
 
 	if (arg_c != 2)
 	fprintf(stderr, "USAGE: monty file\n"), exit(EXIT_FAILURE);
-
 	ptr_fichier = fopen(arg_v[1], "r"), erreur = 0;
 	if (ptr_fichier == NULL)
 	fprintf(stderr, "Error: Can't open file %s\n", arg_v[1]), exit(EXIT_FAILURE);
