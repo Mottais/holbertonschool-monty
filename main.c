@@ -18,7 +18,7 @@ int main(int arg_c, char **arg_v)
 		{"push", f_push}, {"pall", f_pall}, {"pint", f_pint}, {"pop", f_pop},
 		{"swap", f_swap}, {"add", f_add}, {"sub", f_sub}, {"div", f_div},
 		{"mul", f_mul}, {"mod", f_mod}, {"nop", f_nop},	{"pchar", f_pchar},
-		{NULL, NULL}};
+		{"pstr", f_pstr}, {NULL, NULL}};
 
 	if (arg_c != 2)
 	fprintf(stderr, "USAGE: monty file\n"), exit(EXIT_FAILURE);
