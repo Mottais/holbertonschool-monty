@@ -25,17 +25,17 @@ int main(int arg_c, char **arg_v)
 	ptr_fichier = fopen(arg_v[1], "r"), erreur = 0;
 	if (ptr_fichier == NULL)
 	fprintf(stderr, "Error: Can't open file %s\n", arg_v[1]), exit(EXIT_FAILURE);
-
 	while (getline(&ligne, &len, ptr_fichier) != -1)
 	{
-		compte_lg++, instruction = strtok(ligne, " \n");
+		compte_lg++, instruction = strtok(ligne, " \n"), index_fonct = -1;
 		if (instruction != NULL)
 		{
-			index_fonct = -1;
 			for (i = 0; tab_opcode_fonct[i].opcode != NULL; i++)
 			{
 				if (strcmp(instruction, tab_opcode_fonct[i].opcode) == 0)
 				index_fonct = i, tab_opcode_fonct[index_fonct].f(&list_head, compte_lg);
+
+
 			}
 		if (index_fonct == -1 && instruction[0] != '#')
 		{
@@ -43,7 +43,7 @@ int main(int arg_c, char **arg_v)
 			erreur = EXIT_FAILURE;
 		}
 		if (erreur == EXIT_FAILURE)
-		break;
+			break;
 	}
 }
 free_stack(&list_head), free(ligne), fclose(ptr_fichier);
