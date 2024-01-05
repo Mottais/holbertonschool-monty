@@ -21,7 +21,7 @@ int main(int arg_c, char **arg_v)
 	instruction_t tab_opcode_fonct[] = {
 		{"push", f_push}, {"pall", f_pall}, {"pint", f_pint},
 		{"pop", f_pop}, {"swap", f_swap}, {"add", f_add},
-		{"nop", f_nop}, {NULL, NULL}};
+		{"nop", f_nop}, {"sub", f_sub}, {NULL, NULL}};
 	if (arg_c != 2)
 	{
 		fprintf(stderr, "USAGE: monty file\n");
