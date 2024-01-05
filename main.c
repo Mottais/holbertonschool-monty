@@ -21,10 +21,12 @@ int main(int arg_c, char **arg_v)
 		{"pstr", f_pstr}, {"rotl", f_rotl}, {"rotr", f_rotr}, {NULL, NULL}};
 
 	if (arg_c != 2)
-	fprintf(stderr, "USAGE: monty file\n"), exit(EXIT_FAILURE);
+		fprintf(stderr, "USAGE: monty file\n"), exit(EXIT_FAILURE);
+
 	ptr_fichier = fopen(arg_v[1], "r"), erreur = 0;
 	if (ptr_fichier == NULL)
-	fprintf(stderr, "Error: Can't open file %s\n", arg_v[1]), exit(EXIT_FAILURE);
+		fprintf(stderr, "Error: Can't open file %s\n", arg_v[1]), exit(EXIT_FAILURE);
+
 	while (getline(&ligne, &len, ptr_fichier) != -1)
 	{
 		compte_lg++, instruction = strtok(ligne, " \n"), index_fonct = -1;
@@ -34,8 +36,6 @@ int main(int arg_c, char **arg_v)
 			{
 				if (strcmp(instruction, tab_opcode_fonct[i].opcode) == 0)
 				index_fonct = i, tab_opcode_fonct[index_fonct].f(&list_head, compte_lg);
-
-
 			}
 		if (index_fonct == -1 && instruction[0] != '#')
 		{
