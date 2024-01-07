@@ -34,7 +34,7 @@ void f_pusq(stack_t **list_head, unsigned int num_ligne)
 		return;
 	}
 	new_element->n = atoi(value_str);
-	new_element->prev = NULL;
+	new_element->next = NULL;
 	if (current != NULL)
 	{
 		while (current->next != NULL)
