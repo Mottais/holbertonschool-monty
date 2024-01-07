@@ -1,0 +1,11 @@
+[-]  boucle qui met la valeur du ptr(0) à 0 (si ce n'est pas déjà le cas)
+>    passe à ptr(1)
+[-]  boucle qui met la valeur du ptr(1) à 0 (si ce n'est pas déjà le cas)
+<    passe à ptr(0)
+,    input char et attribue la sa valeur ASCII à ptr(0) (soit 48 si '0' est saisi)
+------------------------------------------------ soustrait 48 à ptr(0)
+>    passe à ptr(1)
+,    input char et attribue la sa valeur ASCII à ptr(1)
+<    passe à ptr(0)
+[->+<] boucle qui décrémente ptr(0) puis incrémente ptr(1) tant que prt(0) est différent de 0
+>.   imprime ptr(1)
