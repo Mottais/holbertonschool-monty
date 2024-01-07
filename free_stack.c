@@ -8,7 +8,7 @@
 void free_stack(stack_t **list_head)
 {
 	stack_t *next_node;
-printf("free_stack\n");
+
 	while (*list_head != NULL)
 	{
 		next_node = (*list_head)->next;
