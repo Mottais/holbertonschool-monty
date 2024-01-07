@@ -33,6 +33,7 @@ void f_pusq(stack_t **list_head, unsigned int num_ligne)
 		erreur = EXIT_FAILURE;
 		return;
 	}
+	new_element->n = atoi(value_str);
 	new_element->prev = NULL;
 	if (current != NULL)
 	{
