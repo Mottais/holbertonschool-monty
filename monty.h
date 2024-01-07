@@ -41,6 +41,7 @@ typedef struct instruction_s
 int erreur;
 
 void f_push(stack_t **list_head, unsigned int num_ligne);
+void f_pusq(stack_t **list_head, unsigned int num_ligne);
 void f_pall(stack_t **list_head, unsigned int num_ligne);
 void f_pint(stack_t **list_head, unsigned int num_ligne);
 void f_pop(stack_t **list_head, unsigned int num_ligne);
